@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+echo "Building tests project..."
+msbuild ../GabDemo.Tests/GabDemo.Tests.csproj /p:Configuration=Release
+
 echo "Logging in..."
 appcenter login --token "f1d882f81531704405a1e62ea3612e8063491608"
 
