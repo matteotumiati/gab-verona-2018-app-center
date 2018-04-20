@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using GabDemo.Tests.Models;
 using NUnit.Framework;
 using Xamarin.UITest;
 using Xamarin.UITest.Queries;
@@ -31,25 +32,24 @@ namespace GabDemo.Tests
             app.Screenshot("First screen.");
         }
 
-        public void NavigateToCustomerDetails()
-        {
-            
-        }
-
         [Test]
         public void FindCustomerInList()
         {
-            app.Tap(x => x.Text("Go to tests"));
-            app.Screenshot("Customer list");
+            var customer = new Customer(app);
 
-            app.ScrollDownTo(x => x.Text("Matteo Tumiati"));
-            app.WaitForElement(x => x.Text("Matteo Tumiati"),
-                               timeoutMessage: "Cannot find the element",
-                               timeout: TimeSpan.FromSeconds(120));
-            app.Flash(x => x.Text("Matteo Tumiati"));
-            app.Screenshot("Customer selected");
+            customer.GoToCustomersPage();
+            customer.SearchCustomer("Matteo Tumiati");
+            customer.SelectCustomer("Matteo Tumiati");
+        }
 
-            app.Tap(x => x.Text("Matteo Tumiati"));
+        [Test]
+        public void ModifyCustomerDetails()
+        {
+            var customer = new Customer(app);
+
+            customer.GoToCustomersPage();
+            customer.SearchCustomer("Matteo Tumiati");
+            customer.ModifyCustomerDetails("Matteo Tumiati");
         }
     }
 }
