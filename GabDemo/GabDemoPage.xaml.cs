@@ -38,5 +38,10 @@ namespace GabDemo
                 ex.Report();
             }
         }
+
+        async void NavigateToTestPage(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new TestPage());
+        }
     }
 }

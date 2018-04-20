@@ -40,11 +40,11 @@ namespace GabDemo.Droid
             // customize push
             // Push.SetSenderId("");
 
-            AppCenter.Start("ec628b35-1c61-4eda-9810-138c732fa3e0",
-                            typeof(Analytics), 
-                            typeof(Crashes), 
-                            typeof(Distribute),
-                            typeof(Push));
+            //AppCenter.Start("ec628b35-1c61-4eda-9810-138c732fa3e0",
+                            //typeof(Analytics), 
+                            //typeof(Crashes), 
+                            //typeof(Distribute),
+                            //typeof(Push));
         }
     }
 }

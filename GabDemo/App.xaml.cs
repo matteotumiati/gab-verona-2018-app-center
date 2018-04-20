@@ -8,7 +8,7 @@ namespace GabDemo
         {
             InitializeComponent();
 
-            MainPage = new GabDemoPage();
+            MainPage = new NavigationPage(new GabDemoPage());
         }
 
         protected override void OnStart()
