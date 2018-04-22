@@ -1,15 +1,10 @@
-﻿using System;
-using System.IO;
-using System.Linq;
-using GabDemo.Tests.Models;
+﻿using GabDemo.Tests.Models;
 using NUnit.Framework;
 using Xamarin.UITest;
-using Xamarin.UITest.Queries;
 
 namespace GabDemo.Tests
 {
     [TestFixture(Platform.Android)]
-    [TestFixture(Platform.iOS)]
     public class Tests
     {
         IApp app;

@@ -35,6 +35,7 @@ namespace GabDemo
             }
             catch (Exception ex)
             {
+                // Analytics.TrackEvent("Exception", new Dictionary<string, string> { { "Stacktrace", ex.StackTrace } });
                 ex.Report();
             }
         }

@@ -8,6 +8,7 @@ namespace GabDemo
 {
     static class ExceptionHelpers
     {
+        // try to change this value to see what happens in App Center
         const bool shouldReportAnEvent = false;
 
         public static void Report(this Exception ex, [CallerMemberName] string caller = "")

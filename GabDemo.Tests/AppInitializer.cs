@@ -30,7 +30,7 @@ namespace GabDemo.Tests
                     // TODO: Update this path to point to your Android app and uncomment the
                     // code if the app is not included in the solution.
 
-                    .ApkFile ("/Users/matteotumiati/Projects/GabDemo/Droid/bin/Release/matteotumiati.GabDemo-Signed.apk")
+                    .ApkFile ("../bin/Release/gabDemo-Signed.apk")
                     .StartApp();
             }
 

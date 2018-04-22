@@ -1,11 +1,5 @@
-﻿using System;
-
-using Android.App;
-using Android.Content;
+﻿using Android.App;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Push;
@@ -34,17 +28,20 @@ namespace GabDemo.Droid
 
         private void InitializeAppCenter()
         {
+            // customize push
+            Push.SetSenderId("{sender-id}"); 
+            Push.EnableFirebaseAnalytics();
+            Push.SetEnabledAsync(true);
+
             // set the log level
             AppCenter.LogLevel = LogLevel.Verbose;
 
-            // customize push
-            // Push.SetSenderId("");
-
-            //AppCenter.Start("ec628b35-1c61-4eda-9810-138c732fa3e0",
-                            //typeof(Analytics), 
-                            //typeof(Crashes), 
-                            //typeof(Distribute),
-                            //typeof(Push));
+            // start the service
+            AppCenter.Start("{app-center-id}",
+                            typeof(Analytics), 
+                            typeof(Crashes), 
+                            typeof(Distribute),
+                            typeof(Push));
         }
     }
 }
